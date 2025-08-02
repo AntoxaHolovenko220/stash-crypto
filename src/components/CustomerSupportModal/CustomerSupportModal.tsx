@@ -69,18 +69,18 @@ const CustomerSupportModal = ({ open, onClose }: ModalProps) => {
 			<DialogActions
 				sx={{ display: 'flex', justifyContent: 'center', gap: '50px' }}
 			>
-				<Link
+				{/* <Link
 					href='https://t.me/stix_cash_support'
 					target='_blank'
 					rel='noopener noreferrer'
 					style={{ textDecoration: 'none' }}
-				>
-					<IconButton>
-						<TelegramIcon
-							sx={{ width: '50px', height: '50px', color: '#FFFFFF' }}
-						/>
-					</IconButton>
-				</Link>
+				> */}
+				<IconButton>
+					<TelegramIcon
+						sx={{ width: '50px', height: '50px', color: '#FFFFFF' }}
+					/>
+				</IconButton>
+				{/* </Link> */}
 				{/* <Link
 						href='https://wa.me/380'
 						target='_blank'
