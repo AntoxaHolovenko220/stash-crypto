@@ -86,7 +86,7 @@ const SecondStep = ({ method, setCheckForm }: Props) => {
 	const [transactionId, setTransactionId] = useState(useRandomId())
 	const [isTermsAccepted, setІsTermsAccepted] = useState(false)
 	const [isTransactionAllowed, setIsTransactionAllowed] = useState(false)
-	const [paymentDetails, setPaymentDetails] = useState({})
+	// const [paymentDetails, setPaymentDetails] = useState({})
 
 	useEffect(() => {
 		const fetchProfile = async () => {
@@ -134,19 +134,21 @@ const SecondStep = ({ method, setCheckForm }: Props) => {
 
 	const handleCreateTransaction = async () => {
 		try {
+			let paymentDetails = {}
+
 			if (method === 'paypalAddress') {
-				setPaymentDetails({ paypalAddress: paypalAddress })
+				paymentDetails = { paypalAddress: paypalAddress }
 			} else if (method === 'walletBTCAddress') {
-				setPaymentDetails({ walletBTCAddress: walletBTCAddress })
+				paymentDetails = { walletBTCAddress: walletBTCAddress }
 			} else if (method === 'wireTransfer') {
-				setPaymentDetails({
+				paymentDetails = {
 					firstName: wireTransferFirstName,
 					lastName: wireTransferLastName,
 					accountNumber: wireTransferAccountNumber,
 					routingNumber: wireTransferRoutingNumber,
 					bankName: wireTransferBankName,
 					address: wireTransferAddress,
-				})
+				}
 			}
 			if (!isTransactionAllowed) {
 				setIsSuccess(false)
