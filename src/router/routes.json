@@ -2,7 +2,7 @@
 	"LandingPage": {
 		"path": "/",
 		"component": "LandingPage",
-		"title": "Styx Cash"
+		"title": "Stash Crypto"
 	},
 	"HomePage": {
 		"path": "/home",
