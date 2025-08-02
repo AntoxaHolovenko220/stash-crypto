@@ -1,0 +1,68 @@
+{
+	"LandingPage": {
+		"path": "/",
+		"component": "LandingPage",
+		"title": "Styx Cash"
+	},
+	"HomePage": {
+		"path": "/home",
+		"component": "HomePage",
+		"title": "Home",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"TransactionsPage": {
+		"path": "/transactions",
+		"component": "TransactionsPage",
+		"title": "Transactions",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"ProfilePage": {
+		"path": "/profile",
+		"component": "ProfilePage",
+		"title": "Profile",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"TopUpPage": {
+		"path": "/top-up",
+		"component": "TopUpPage",
+		"title": "Top-Up",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"WithdrawPage": {
+		"path": "/withdraw",
+		"component": "WithdrawPage",
+		"title": "Withdraw",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"ClientsPage": {
+		"path": "/clients",
+		"component": "ClientsPage",
+		"title": "Clients",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"AdminTransactionsPage": {
+		"path": "/admin-transactions",
+		"component": "AdminTransactionsPage",
+		"title": "Transactions",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"ClientPage": {
+		"path": "/clients/:id",
+		"component": "ClientPage",
+		"title": "Clients",
+		"layout": "MainLayout",
+		"private": true
+	},
+	"NotFoundPage": {
+		"path": "*",
+		"component": "NotFoundPage",
+		"title": "Страница не найдена"
+	}
+}

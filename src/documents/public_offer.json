@@ -1,0 +1,57 @@
+{
+	"title": "Public Offer",
+	"desc": [
+		{
+			"type": "text",
+			"values": [
+				"This document is a formal offer by StixCash to any capable person to use its cryptocurrency and fiat services."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"1. Offer Subject",
+				"Receipt of crypto assets, bank card transfers, and issuance of cash at agreed rates."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["2. Conditions"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Client confirms the legal origin of funds",
+				"- Service provided upon agreement via site or operator"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["3. Acceptance", "Offer is considered accepted when:"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- A request is submitted on the site",
+				"- Conditions are confirmed via operator"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"4. Term",
+				"The offer is valid indefinitely until replaced or revoked."
+			]
+		},
+		{ "type": "br" },
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["Published: 31.07.2025"]
+		}
+	]
+}

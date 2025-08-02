@@ -1,0 +1,75 @@
+{
+	"title": "Privacy Policy",
+	"desc": [
+		{
+			"type": "text",
+			"values": [
+				"StixCash respects your right to privacy and is committed to protecting Users’ personal data."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["1. Information We Collect"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Name, email, phone number",
+				"- KYC documents",
+				"- IP address, login time, browser data"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["2. Purpose of Collection"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Identity verification and security",
+				"- Regulatory compliance",
+				"- Service improvement"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["3. Data Storage and Protection"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Encrypted storage",
+				"- Access restricted to authorized personnel"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"4. Disclosure",
+				"We do not share data with third parties, except:"
+			]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- As required by law",
+				"- To KYC/AML partners (minimum required data only)"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["5. Cookies", "We use cookies for login and analytics."]
+		},
+		{ "type": "br" },
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["Effective Date: 31.07.2025"]
+		}
+	]
+}

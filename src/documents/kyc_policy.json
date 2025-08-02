@@ -1,0 +1,45 @@
+{
+	"title": "Know Your Customer (KYC) Policy",
+	"desc": [
+		{
+			"type": "text",
+			"values": [
+				"1. Purpose",
+				"Prevent illegal use of the service and comply with AML/KYC requirements."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["2. Verification Levels"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Basic: up to $1,000/month — no documents required",
+				"- Extended: requires passport, selfie, and proof of address"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["3. Procedure"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"1) Upload documents",
+				"2) Moderator review",
+				"3) Response within 24 hours"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"4. Rejection",
+				"We may deny verification without explanation if risk is detected."
+			]
+		}
+	]
+}

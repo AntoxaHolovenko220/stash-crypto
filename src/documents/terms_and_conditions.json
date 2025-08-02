@@ -1,0 +1,57 @@
+{
+	"title": "Terms and Conditions",
+	"desc": [
+		{
+			"type": "text",
+			"values": [
+				"This User Agreement ('Agreement') governs the relationship between StixCash (the 'Service') and any individual or legal entity (the 'User') utilizing the platform."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"1. Services",
+				"StixCash provides services for receiving and exchanging cryptocurrency assets and converting bank card funds into cash. All transactions are subject to individual agreement and applicable laws."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"2. User Obligations",
+				"The User agrees to use the Service for lawful purposes only. The use of the Service for money laundering, terrorism financing, sanction evasion, or any other illegal activity is strictly prohibited."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"3. Verification and Limits",
+				"KYC procedures may be required for transactions exceeding established limits. The Service reserves the right to deny service at its discretion."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"4. Liability",
+				"StixCash is not liable for user input errors (wallet addresses, bank details, delays). Users are solely responsible for the legality of their funds."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"5. Modifications",
+				"The Service may update these terms without prior notice. The current version is always available on the website."
+			]
+		},
+		{ "type": "br" },
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["Last updated: 31.07.2025"]
+		}
+	]
+}

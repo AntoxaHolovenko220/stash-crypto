@@ -1,0 +1,62 @@
+{
+	"title": "Anti-Money Laundering (AML) Policy",
+	"desc": [
+		{
+			"type": "text",
+			"values": [
+				"StixCash is committed to preventing money laundering and terrorism financing in line with international standards."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"1. Introduction",
+				"We monitor transactions, analyze risks, and detect suspicious activity internally."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["2. Procedures"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Client identity verification (KYC)",
+				"- Client identity verification (KYC)",
+				"- Geographic and operational risk assessment"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"3. Thresholds",
+				"Transactions exceeding limits may be paused pending documentation."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"4. Cooperation with Authorities",
+				"We may disclose data to authorities in case of suspicious activity under applicable law."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"5. Policy Updates",
+				"This policy is reviewed annually or upon regulatory changes."
+			]
+		},
+		{ "type": "br" },
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["Last updated: 31.07.2025"]
+		}
+	]
+}

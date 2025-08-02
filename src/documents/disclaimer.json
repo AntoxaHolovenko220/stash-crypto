@@ -1,0 +1,24 @@
+{
+	"title": "Disclaimer",
+	"desc": [
+		{
+			"type": "text",
+			"values": [
+				"StixCash provides the service 'as is' without warranties of availability or uptime. We are not responsible for:"
+			]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Cryptocurrency market volatility",
+				"- Third-party blockages (banks, exchanges)",
+				"- Network delays or failures"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["Users perform actions at their own risk."]
+		}
+	]
+}

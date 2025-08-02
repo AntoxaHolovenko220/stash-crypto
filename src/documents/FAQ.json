@@ -1,0 +1,122 @@
+{
+	"title": "StixCash — Frequently Asked Questions (FAQ)",
+	"desc": [
+		{
+			"type": "text",
+			"values": [
+				"1. What is StixCash?",
+				"StixCash is a service that enables secure and efficient receipt of funds from external crypto wallets and conversion of bank card transfers into cash. We operate with verified partners and ensure anonymity, reliability, and flexibility for our clients."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["2. What services do you offer?"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Receiving funds from cryptocurrency wallets (BTC, ETH, USDT, etc.)",
+				"- Converting bank card transfers into cash",
+				"- Cashing out cryptocurrency in client-friendly formats",
+				"- P2P support and personalized transaction handling"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"3. Which cryptocurrencies do you support?",
+				"We currently support:"
+			]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Bitcoin (BTC)",
+				"- Ethereum (ETH)",
+				"- Tether (USDT – TRC20, ERC20, BEP20)",
+				"- Litecoin (LTC)",
+				"- Others on request"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["4. How does cash-out work?"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"1) You submit a request via website or manager",
+				"2) You receive wallet address or bank details",
+				"3) Once the transaction is confirmed, you receive cash via pre-agreed method (meetup, courier, partner locations)"
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"5. Can I convert funds from a bank card into cash?",
+				"Yes. We accept Visa/MasterCard transfers via partners and provide cash withdrawal according to your region and preferences."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"6. Do I need verification?",
+				"Verification is not required for standard transactions within the limit. For higher volumes or on request, KYC (passport + selfie) may be required. You will be notified in advance if needed."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"7. What countries do you operate in?",
+				"StixCash operates internationally. Cash-out availability depends on regional partners. We support users in Europe, CIS, Asia, the Middle East, and more — subject to confirmation."
+			]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"8. How long do transactions take?",
+				"Transaction speed depends on:"
+			]
+		},
+		{
+			"type": "list",
+			"values": ["- Transaction type", "- Network load", "- Region"]
+		},
+		{
+			"type": "text",
+			"values": ["Typically: 15 minutes to a few hours after confirmation."]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": ["9. What are the fees?", "Fees depend on:"]
+		},
+		{
+			"type": "list",
+			"values": [
+				"- Transaction volume",
+				"- Cryptocurrency type",
+				"- Cash-out region"
+			]
+		},
+		{
+			"type": "text",
+			"values": ["Always confirm with your manager beforehand."]
+		},
+		{ "type": "br" },
+		{
+			"type": "text",
+			"values": [
+				"10. Is it safe?",
+				"We work only with trusted contractors, encrypt your data, and never store unnecessary personal info. We also follow basic AML guidelines to ensure operational safety."
+			]
+		}
+	]
+}
