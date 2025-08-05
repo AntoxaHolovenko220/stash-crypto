@@ -85,7 +85,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 						color: '#FFFFFF',
 					}}
 				>
-					Styx Cash
+					Stash Crypto
 				</Typography>
 				{!isWideScreen && (
 					<IconButton
