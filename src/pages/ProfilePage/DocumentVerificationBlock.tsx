@@ -64,7 +64,7 @@ const DocumentVerificationBlock = ({
 	const handleVerify = async () => {
 		setIsVerifying(true)
 		try {
-			// await verifyDocuments(selectedFiles)
+			await verifyDocuments(selectedFiles)
 			setIsSuccess(true)
 			setDialogText(t('uploadSuccess'))
 			setDialogOpen(true)
