@@ -1,6 +1,6 @@
 export const ruTranslations = {
 	easy: 'Легкий и безопасный',
-	withdrawing: 'вывод денег с кредитных карт в США',
+	withdrawing: 'вывод денег в США',
 	unique: 'Уникальные легальные методы',
 	minimum: 'Минимальные комиссии',
 	maximum: 'Максимальная выгода',

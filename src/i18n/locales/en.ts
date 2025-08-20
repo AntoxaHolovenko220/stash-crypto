@@ -1,6 +1,6 @@
 export const enTranslations = {
 	easy: 'Easy and safe',
-	withdrawing: 'withdrawing money from credit cards in the USA',
+	withdrawing: 'withdrawing money in the USA',
 	unique: 'Unique legal methods',
 	minimum: 'Minimal commissions',
 	maximum: 'Maximum benefit',
