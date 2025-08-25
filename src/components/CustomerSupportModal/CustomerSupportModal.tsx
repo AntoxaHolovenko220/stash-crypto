@@ -70,7 +70,7 @@ const CustomerSupportModal = ({ open, onClose }: ModalProps) => {
 				sx={{ display: 'flex', justifyContent: 'center', gap: '50px' }}
 			>
 				<Link
-					href='https://t.me/+375440660618'
+					href='https://t.me/stashcryptosupport'
 					target='_blank'
 					rel='noopener noreferrer'
 					style={{ textDecoration: 'none' }}
