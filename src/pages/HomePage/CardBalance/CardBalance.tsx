@@ -2,30 +2,45 @@ import { Box, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import routes from '@/router/routes.json'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 interface CardBalanceProps {
 	balance: number | string
-	BTCbalance: number | string
 	showBtcBalance?: boolean
 }
 
-const CardBalance = ({
-	balance,
-	BTCbalance,
-	showBtcBalance,
-}: CardBalanceProps) => {
+const CardBalance = ({ balance, showBtcBalance }: CardBalanceProps) => {
 	const { t } = useTranslation()
 	const navigate = useNavigate()
 
+	const [BTCbalance, setBTCbalance] = useState<number | null>(null)
 	const [error, setError] = useState('')
+
+	useEffect(() => {
+		const fetchRate = async () => {
+			try {
+				const res = await axios.get(
+					'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd'
+				)
+				const usdToBtc = 1 / res.data.bitcoin.usd
+				setBTCbalance(Number(balance) * usdToBtc)
+			} catch (err) {
+				setError('Failed to fetch BTC rate')
+			}
+		}
+
+		if (showBtcBalance) {
+			fetchRate()
+		}
+	}, [balance, showBtcBalance])
 
 	const commonTextStyles = {
 		fontFamily: 'Manrope',
 		fontWeight: 700,
 		lineHeight: 1,
 		color: '#FFFFFF',
-		textTransform: 'uppercase',
+		textTransform: 'uppercase' as const,
 	}
 
 	if (error) {
@@ -62,7 +77,7 @@ const CardBalance = ({
 					>
 						$ {balance}
 					</Typography>
-					{showBtcBalance && (
+					{showBtcBalance && BTCbalance !== null && (
 						<Typography
 							sx={{
 								fontFamily: 'Manrope',
@@ -75,7 +90,7 @@ const CardBalance = ({
 								letterSpacing: '-1px',
 							}}
 						>
-							{BTCbalance} BTC
+							{BTCbalance.toFixed(8)} BTC
 						</Typography>
 					)}
 				</Box>

@@ -33,7 +33,7 @@ const Header = ({ onLogoClick }: HeaderProps) => {
 				<Box
 					onClick={onLogoClick}
 					sx={{
-						width: '126px',
+						width: '153px',
 						height: '39px',
 						display: 'flex',
 						justifyContent: 'center',

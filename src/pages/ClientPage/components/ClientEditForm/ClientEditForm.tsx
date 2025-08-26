@@ -54,6 +54,7 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 	const [isEditing, setIsEditing] = useState<{ [key: string]: boolean }>({})
 	const [firstName, setFirstName] = useState(client.firstName)
 	const [lastName, setLastName] = useState(client.lastName)
+	const [email, setEmail] = useState(client.email)
 	const [phone, setPhone] = useState(client.phone)
 	const [verificationStatus, setVerificationStatus] = useState(
 		client.verificationStatus
@@ -115,21 +116,21 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 		}, 0)
 	}, [])
 
-	const handleKeyDown = (
-		e: React.KeyboardEvent<HTMLInputElement>,
-		key: string
-	) => {
-		if (e.key === 'Enter') {
-			e.preventDefault()
-			setIsEditing(prev => ({
-				...prev,
-				[key]: !prev[key],
-			}))
-			if (!isEditing[key]) {
-				focusInput(key)
-			}
-		}
-	}
+	// const handleKeyDown = (
+	// 	e: React.KeyboardEvent<HTMLInputElement>,
+	// 	key: string
+	// ) => {
+	// 	if (e.key === 'Enter') {
+	// 		e.preventDefault()
+	// 		setIsEditing(prev => ({
+	// 			...prev,
+	// 			[key]: !prev[key],
+	// 		}))
+	// 		if (!isEditing[key]) {
+	// 			focusInput(key)
+	// 		}
+	// 	}
+	// }
 
 	const handlePhoneChange = (value: string) => {
 		const digits = value.replace(/\D/g, '')
@@ -216,6 +217,13 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 			type: 'string',
 		},
 		{
+			name: t('email'),
+			key: 'email',
+			value: email,
+			onchange: (val: string) => setEmail(val),
+			type: 'string',
+		},
+		{
 			name: t('telephone'),
 			key: 'phone',
 			value: phone,
@@ -282,13 +290,13 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 			onchange: (val: string) => setBalance(val),
 			type: 'string',
 		},
-		{
-			name: t('balanceBTC'),
-			key: 'balanceBTC',
-			value: balanceBTC,
-			onchange: (val: string) => setBalanceBTC(val),
-			type: 'string',
-		},
+		// {
+		// 	name: t('balanceBTC'),
+		// 	key: 'balanceBTC',
+		// 	value: balanceBTC,
+		// 	onchange: (val: string) => setBalanceBTC(val),
+		// 	type: 'string',
+		// },
 	]
 
 	if (loading) return <Loader />
@@ -418,7 +426,6 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 												ml: '-12px',
 											},
 										},
-										// Запрещаем открытие меню при isEditing false
 										onMouseDown: (e: React.MouseEvent<HTMLDivElement>) => {
 											if (!isEditing[input.key]) {
 												e.preventDefault()
@@ -439,7 +446,6 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 													alignItems: 'cente',
 													justifyContent: 'space-between',
 													gap: '8px',
-													// Запрещаем события мыши при неактивном состоянии
 													pointerEvents: isEditing[input.key] ? 'auto' : 'none',
 												}}
 											>
@@ -538,8 +544,8 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 											inputRef={el => (inputRefs.current['country'] = el)}
 											InputProps={{
 												...params.InputProps,
-												onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) =>
-													handleKeyDown(e, 'country'),
+												// onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) =>
+												// 	handleKeyDown(e, 'country'),
 												disableUnderline: true,
 												sx: {
 													width: '165px',
@@ -582,10 +588,12 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 											backgroundColor: 'transparent',
 										},
 									}}
-									inputProps={{
-										onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) =>
-											handleKeyDown(e, input.key),
-									}}
+									inputProps={
+										{
+											// onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) =>
+											// 	handleKeyDown(e, input.key),
+										}
+									}
 								/>
 							)}
 							{input.inputType === 'modal' ? (
@@ -628,6 +636,7 @@ const ClientEditForm = ({ client, loading, error, id, setClient }: Props) => {
 												if (input.key === 'firstName') valueToSave = firstName
 												else if (input.key === 'lastName')
 													valueToSave = lastName
+												else if (input.key === 'email') valueToSave = email
 												else if (input.key === 'phone') valueToSave = phone
 												else if (input.key === 'country') valueToSave = country
 												else if (input.key === 'password')

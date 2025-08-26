@@ -176,7 +176,7 @@ const HomePage = () => {
 					<CardBalance
 						balance={Number(profile.balance).toFixed(2)}
 						showBtcBalance={profile.showBTCBalance}
-						BTCbalance={Number(profile.balanceBTC).toFixed(8)}
+						// BTCbalance={Number(profile.balanceBTC).toFixed(8)}
 					/>
 					<Box
 						sx={{

@@ -46,8 +46,6 @@ const ClientPage = () => {
 		fetchClient()
 	}, [id, t])
 
-	console.log(transactions)
-
 	if (loading) return <Loader />
 	if (error || !client) return <Typography color='error'>{error}</Typography>
 
