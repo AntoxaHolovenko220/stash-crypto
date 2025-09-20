@@ -244,4 +244,6 @@ export const enTranslations = {
 	disclaimer: 'Disclaimer',
 	aml: 'AML Policy',
 	'register now': 'Register now',
+	'want to delete': 'Do you really want to delete this user?',
+	delete: 'Delete',
 }

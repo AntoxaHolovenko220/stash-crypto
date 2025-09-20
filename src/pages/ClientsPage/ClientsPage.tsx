@@ -1,11 +1,21 @@
-import { Box, IconButton, Typography, TextField } from '@mui/material'
-import { useTranslation } from 'react-i18next'
-import CreateIcon from '@mui/icons-material/Create'
 import { useEffect, useState, useMemo } from 'react'
-import { getClients, Client } from '@/api/clientService'
-import { Loader } from '@/components'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import {
+	Box,
+	IconButton,
+	Typography,
+	TextField,
+	Button,
+	DialogActions,
+	DialogTitle,
+	Dialog,
+} from '@mui/material'
+import { getClients, Client, deleteClient } from '@/api/clientService'
+import { Loader } from '@/components'
+import CreateIcon from '@mui/icons-material/Create'
 import SearchIcon from '@mui/icons-material/Search'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const ClientsPage = () => {
 	const { t } = useTranslation()
@@ -14,20 +24,22 @@ const ClientsPage = () => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState('')
 	const [searchValue, setSearchValue] = useState('')
+	const [openDeleteModal, setOpenDeleteModal] = useState(false)
+	const [clientId, setClientId] = useState('')
+
+	const fetchClients = async () => {
+		try {
+			const data = await getClients()
+			setClients(data)
+		} catch (err) {
+			setError(t('error occurred'))
+			console.error('Failed to fetch clients:', err)
+		} finally {
+			setLoading(false)
+		}
+	}
 
 	useEffect(() => {
-		const fetchClients = async () => {
-			try {
-				const data = await getClients()
-				setClients(data)
-			} catch (err) {
-				setError(t('error occurred'))
-				console.error('Failed to fetch clients:', err)
-			} finally {
-				setLoading(false)
-			}
-		}
-
 		fetchClients()
 	}, [t])
 
@@ -47,6 +59,16 @@ const ClientsPage = () => {
 			)
 		})
 	}, [clients, searchValue])
+
+	const handleDelete = async () => {
+		try {
+			await deleteClient(clientId)
+			setOpenDeleteModal(false)
+			fetchClients()
+		} catch (error) {
+			console.log('Error while deleting user', error)
+		}
+	}
 
 	if (loading) return <Loader />
 	if (error) return <Typography color='error'>{error}</Typography>
@@ -157,7 +179,7 @@ const ClientsPage = () => {
 											: index === 3
 											? '250px'
 											: index === 4
-											? '105px'
+											? '150px'
 											: '70px',
 									fontFamily: 'Manrope',
 									fontSize: '12px',
@@ -206,7 +228,7 @@ const ClientsPage = () => {
 							</Typography>
 							<Box
 								sx={{
-									width: '105px',
+									width: '150px',
 									display: 'flex',
 									justifyContent: 'space-between',
 									alignItems: 'center',
@@ -215,16 +237,114 @@ const ClientsPage = () => {
 								<Typography sx={{ fontFamily: 'Manrope', fontSize: '12px' }}>
 									{Number(client.balance).toFixed(2)}
 								</Typography>
-								<IconButton onClick={() => navigate(`/clients/${client._id}`)}>
-									<CreateIcon
-										sx={{ width: '18px', height: '18px', color: '#0246FF' }}
-									/>
-								</IconButton>
+								<Box sx={{ width: 'fit-content', display: 'flex' }}>
+									<IconButton
+										onClick={() => {
+											setOpenDeleteModal(true)
+											setClientId(client._id)
+										}}
+									>
+										<DeleteIcon
+											sx={{ width: '18px', height: '18px', color: '#D72828' }}
+										/>
+									</IconButton>
+									<IconButton
+										onClick={() => navigate(`/clients/${client._id}`)}
+									>
+										<CreateIcon
+											sx={{ width: '18px', height: '18px', color: '#0246FF' }}
+										/>
+									</IconButton>
+								</Box>
 							</Box>
 						</Box>
 					))}
 				</Box>
 			</Box>
+			<Dialog
+				open={openDeleteModal}
+				onClose={() => setOpenDeleteModal(false)}
+				PaperProps={{
+					sx: {
+						boxSizing: 'border-box',
+						display: 'flex',
+						flexDirection: 'column',
+						justifyContent: 'space-between',
+						width: '390px',
+						minHeight: '220px',
+						borderRadius: '24px',
+						background: 'linear-gradient(180deg, #58A9FF 0%, #0044FF 50%)',
+						color: '#FFFFFF',
+						padding: '20px 16px',
+					},
+				}}
+			>
+				<DialogTitle sx={{ p: 0 }}>
+					<Typography
+						sx={{
+							fontFamily: 'Manrope',
+							fontSize: '20px',
+							fontWeight: 700,
+							textAlign: 'center',
+						}}
+					>
+						{t('want to delete')}
+					</Typography>
+				</DialogTitle>
+
+				<DialogActions
+					sx={{ display: 'flex', justifyContent: 'center', gap: '20px' }}
+				>
+					<Button
+						onClick={handleDelete}
+						sx={{
+							width: '100%',
+							height: '56px',
+							border: '1px solid #232323',
+							borderRadius: '6px',
+							display: 'inline-block',
+							backgroundColor: '#D72828',
+						}}
+					>
+						<Typography
+							sx={{
+								color: '#FFFFFF',
+								fontFamily: 'Manrope',
+								fontSize: '20px',
+								fontWeight: 700,
+								textTransform: 'none',
+							}}
+						>
+							{t('delete')}
+						</Typography>
+					</Button>
+					<Button
+						onClick={() => setOpenDeleteModal(false)}
+						sx={{
+							width: '100%',
+							height: '56px',
+							border: '1px solid #232323',
+							borderRadius: '6px',
+							backgroundColor: '#FFFFFF',
+							display: 'inline-block',
+						}}
+					>
+						<Typography
+							sx={{
+								background: 'linear-gradient(180deg, #58A9FF 0%, #0044FF 50%)',
+								WebkitBackgroundClip: 'text',
+								WebkitTextFillColor: 'transparent',
+								fontFamily: 'Manrope',
+								fontSize: '20px',
+								fontWeight: 700,
+								textTransform: 'none',
+							}}
+						>
+							{t('cancel')}
+						</Typography>
+					</Button>
+				</DialogActions>
+			</Dialog>
 		</Box>
 	)
 }

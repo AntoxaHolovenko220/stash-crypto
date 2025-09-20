@@ -152,7 +152,7 @@ const RegisterModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
 							variant='standard'
 							fullWidth
 							placeholder={isLoginForm ? t('your email') : 'Email'}
-							type='email'
+							// type='email'
 							autoComplete='email'
 							value={email}
 							onChange={e => handleFieldChange('email', e.target.value)}

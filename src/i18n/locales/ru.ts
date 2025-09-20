@@ -246,4 +246,6 @@ export const ruTranslations = {
 	disclaimer: 'Дисклеймер',
 	aml: 'Политика AML',
 	'register now': 'Зарегистрироваться сейчас',
+	'want to delete': 'Вы действительно хотите удалить этого пользователя?',
+	delete: 'Удалить',
 }

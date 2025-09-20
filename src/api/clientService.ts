@@ -119,3 +119,15 @@ export const updateProfileField = async (payload: Record<string, any>) => {
 		},
 	})
 }
+
+export const deleteClient = async (id: string) => {
+	const token = localStorage.getItem('accessToken')
+	if (!token) throw new Error('No token found')
+
+	return axios.delete(`${API_URL}/admin/users/${id}`, {
+		headers: {
+			Authorization: `Bearer ${token}`,
+			'Content-Type': 'application/json',
+		},
+	})
+}
