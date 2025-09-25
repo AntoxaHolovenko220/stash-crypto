@@ -46,7 +46,7 @@ export interface Client {
 }
 
 export const getClients = async (): Promise<Client[]> => {
-	const response = await axios.get(`${API_URL}/admin/users`, {
+	const response = await axios.get(`${API_URL}/admin/users?limit=20000`, {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
 		},
